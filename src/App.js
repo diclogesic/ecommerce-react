@@ -1,36 +1,46 @@
-import React from 'react';
 import './App.css';
+import React, {useState, useEffect} from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+//components
+import NavBar from './components/NavBar/NavBar';
+import ListProducts from './components/ListProducts/ListProducts';
+import ModalCustom from './components/Modal/Modal';
+import Button from '@mui/material/Button';
+import Card from './components/Card/Card';
+import Container from '@mui/material/Container';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetail from './components/ItemDetail/ItemDetail';
+//pages
+import HomePage from './pages/Home'
+import ContactPage from './pages/Contact'
+import NotFoundPage from './pages/NotFound'
+import DetailPage from './pages/Detail';
+import NosotrosPage from './pages/Nosotros'
+//context
+import { ThemeProvider } from './context/ThemeContext';
+import { CartProvider } from './context/CartContext';
 
-/* IMPORTAMOS DE react-router-dom */
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
-import { ItemListContainer } from './components/ItemListContainer';
-import { ItemDetailContainer } from './components/ItemDetailContainer';
-
-export default function App() {
+function App () {
   return (
-    /* envolvemos todo en BrowserRouter */
-    <BrowserRouter>
-      {/* La Navbar afuera de Routes para que se muestre en todas las rutas */}
-      <NavBar />
-
-      {/* aca empiezan las rutas */}
-      <Routes>
-        {/* la HOME */}
-        <Route path="/" element={<ItemListContainer greeting={'HOME'} />} />
-
-        {/* filtramos por categoria */}
-        <Route
-          path="/category/:catId"
-          element={<ItemListContainer greeting={'FILTRADO'} />}
-        />
-
-        {/* vista de detalle */}
-        <Route path="/product/:itemId" element={<ItemDetailContainer />} />
-
-        {/* para evitar navegar a rutas que no existen. pueden usar un mensaje de error en vez del navigate que reditecciona */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    //JSX
+    <div className="App">
+    <CartProvider>
+      <ThemeProvider > 
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/contacto" element={<ContactPage />}/>
+            <Route path="/nosotros" element={<NosotrosPage />}/>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/:category/" element={<HomePage />}/>
+            <Route path="/:category/:id" element={<DetailPage />}/>
+            <Route path="*" element={<NotFoundPage />}/>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </CartProvider>
+  </div>
+);
 }
+
+export default App;

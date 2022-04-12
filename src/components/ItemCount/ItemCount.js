@@ -1,19 +1,25 @@
-import Button from '@mui/material/Button';
-import React, { useState } from 'react' 
+import React,{useState} from 'react'
+
 const ItemCount = ({stock}) => {
-    const [count, setCount]=useState(1)
+    const [count, setCount] = useState(0)
 
     const onAdd = () => {
-        if(count < stock)
-        setCount(count + 1)
+        if(count< stock) {
+            setCount(count + 1)
+        }
     }
-
+    const resta = () => {
+        if(count > 0) {
+            setCount(count - 1)
+        }
+    }
     return(
-        <div>
-            <Button>quitar</Button>
+        <>
+            <button onClick={resta}>-</button>
             <p>{count}</p>
-            <Button onClick={onAdd}>comprar</Button>
-        </div>
+            <button onClick={onAdd}>+</button>
+            
+        </>
     )
 }
 
