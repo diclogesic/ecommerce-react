@@ -1,9 +1,23 @@
-const mockProducto = {
-    title : 'Kodak Printomatic',
-    id: 1,
-    price: 13999,
-    image: '1.jpg',
-    stock: 3,
-    description: 'Disfruta y comparte tus mejores fotos al momento con esta cámara instantánea de Kodak. Disponible en dos acabados, esta compacta de bolsillo cuenta con un sensor de imagen y produce impresiones en papel Zink adhesivo.No olvides comprar papel Kodak Zink para tu Printomatic'
-}
-export default mockProducto;
+const mockProducto = 
+    {
+        title : 'Remera',
+        id: '1',
+        talle: 'XL',
+        price: 1500,
+        image: 'remera3.jpeg',
+        colors: [
+            {
+                hex: '#000000'
+            },
+            {
+                hex: '#004da6'
+            },
+            {
+                hex: '#f44336'
+            }
+        ],
+        description: 'pantalon gabardina liviana con cintura elastica, teñido en prenda, slim fit 97%algodon 3%spandex',
+        stock: 3
+    }
+
+export default mockProducto

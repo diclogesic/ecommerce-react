@@ -44,9 +44,9 @@ function NavBar(props) {
         <header className={`main-header ${lightTheme ? ' light-mode' : ''}`}> 
             <div className='container-logo'>
                 {lightTheme ? (
-                    <img src="../logo-light.jpg" className="img-header"/>
+                    <img src="../logo-light.png" className="img-header"/>
                 ) : (
-                    <img src="../logo.jpg" className="img-header"/>
+                    <img src="../logo.png" className="img-header"/>
                 ) }
             </div>
             <ul className='navbar'> 
@@ -70,13 +70,13 @@ function NavBar(props) {
                                 }}
                             >
                                 <MenuItem onClick={handleClose}>
-                                    <Link to={'/vintage'}>Polaroid Vintage</Link>
+                                    <Link to={'/remeras'}>Remeras</Link>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
-                                    <Link to={'/snap'}>Polaroid Snap</Link>
+                                    <Link to={'/musculosas'}>Musculosas</Link>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
-                                    <Link to={'/shot'}>Kodak Mini Shot</Link>
+                                    <Link to={'/jeans'}>Jeans</Link>
                                 </MenuItem>
                             </Menu> 
                         </li>
