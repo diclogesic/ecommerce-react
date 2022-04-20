@@ -2,12 +2,14 @@ import Container from '@mui/material/Container';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext} from 'react';
 import mockProductos from '../Utils/productsMock'
-/*import { doc, getDoc } from "firebase/firestore";*/
-/*import db from '../firebase'*/
+import { doc, getDoc } from "firebase/firestore";
+import db from '../firebase'
+import CartContext from '../context/CartContext'
 
-const DetailPage = () => {
+const DetailPage = ({data}) => {
+    const { cartProducts, addProductToCart } = useContext(CartContext)
     const { id } = useParams()
     const navigate = useNavigate()
     const [product, setProduct] = useState({})
@@ -29,6 +31,12 @@ const DetailPage = () => {
     useEffect( () => {
         getProduct()
     }, [id])
+
+    const addToCart = (e) => {
+        e.stopPropagation()  
+        console.log("Productos agregados:", cartProducts) 
+        addProductToCart(product)
+    }
     
     return(
         <Container className='container-general'> 
@@ -51,7 +59,7 @@ const DetailPage = () => {
                 </ul>
                 <p className='info__subtitle'>DETALLE</p>
                 <p className='info__text detail__text'>pantalon gabardina liviana con cintura elastica, teñido en prenda, slim fit 97%algodon 3%spandex</p>
-                <Button className='detail__btn-buy'>COMPRAR</Button>
+                <Button onClick={addToCart} className='detail__btn-buy'>COMPRAR</Button>
             </div>
             </div>
         </Container>

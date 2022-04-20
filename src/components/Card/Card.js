@@ -48,6 +48,7 @@ export default function Card({ data, action }) {
                     <h2>{title}</h2>
                     <p>Precio : $ {price}</p>
                     <p>Talle : {talle}</p>
+                    <ItemCount stock={stock} />
                     <Button onClick={addToCart} className="btn-custom">Comprar</Button>
                 </div>
         </div>

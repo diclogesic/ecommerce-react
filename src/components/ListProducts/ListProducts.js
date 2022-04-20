@@ -4,8 +4,8 @@ import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 import ThemeContext from '../../context/ThemeContext'
 import CircularProgress from '@mui/material/CircularProgress';
-{/*import db from '../../firebase'*/}
-/*import { collection, getDocs, query, where } from 'firebase/firestore'*/
+import db from '../../firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 
 const ListProducts = ({children}) => {

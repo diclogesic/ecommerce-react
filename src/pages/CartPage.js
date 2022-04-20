@@ -4,8 +4,8 @@ import { Button } from '@mui/material';
 import CartContext from '../context/CartContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ModalCustom from '../components/Modal/Modal';
-/*import db from '../firebase'*/
-/*import { addDoc, collection } from 'firebase/firestore';*/
+import db from '../firebase'
+import { addDoc, collection } from 'firebase/firestore';
 
 const CartPage = () => {
     const { cartProducts, deleteProduct, totalPrice } = useContext(CartContext)
