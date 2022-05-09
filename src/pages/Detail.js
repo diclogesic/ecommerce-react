@@ -58,7 +58,7 @@ const DetailPage = ({data}) => {
                     })}                    
                 </ul>
                 <p className='info__subtitle'>DETALLE</p>
-                <p className='info__text detail__text'>pantalon gabardina liviana con cintura elastica, teñido en prenda, slim fit 97%algodon 3%spandex</p>
+                <p className='info__text detail__text'>Prendas 100% originales!!</p>
                 <Button onClick={addToCart} className='detail__btn-buy'>COMPRAR</Button>
             </div>
             </div>

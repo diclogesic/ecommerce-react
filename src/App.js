@@ -13,6 +13,7 @@ import HomePage from './pages/Home'
 import ContactPage from './pages/Contact'
 import NotFoundPage from './pages/NotFound'
 import DetailPage from './pages/Detail';
+import NosotrosPage from './pages/Nosotros';
 import CartPage from './pages/CartPage'
 //context
 import { ThemeProvider } from './context/ThemeContext';
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route path="/cart" element={<CartPage />}/>
               <Route path="/contacto" element={<ContactPage />}/>
+              <Route path="/Nosotros" element={<NosotrosPage />}></Route>
               <Route path="/:category/" element={<HomePage />}/>
               <Route path="/:category/:id" element={<DetailPage />}/>
               <Route path="/" element={<HomePage />}/>

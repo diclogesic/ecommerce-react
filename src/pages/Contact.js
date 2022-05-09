@@ -49,9 +49,12 @@ const ContactPage = () => {
                 <section>
                     <h3>Contacto</h3>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" onKeyDown={handleChange} value={value} placeholder='Nombre'/>
+                        <input type="text" name="name" placeholder="Nombre" required="name"/>
+                        <input type="text" name="apellido" placeholder="Apellido" required="apellido"/>
+                        <input type="mail" name="mail" placeholder="Mail" required="mail"/>
+                        {/*<input type="text" onKeyDown={handleChange} value={value} placeholder='Nombre'/>
                         <input type="text" placeholder='Apellido'/>
-                        <input type="mail" placeholder='mail'/>
+                        <input type="mail" placeholder='mail'/>*/}
 
                         <Button onClick={resetForm}>Limpiar Formulario</Button>
                         <Button type="submit">Enviar</Button>
